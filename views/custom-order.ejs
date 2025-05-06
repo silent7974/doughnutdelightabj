@@ -1,0 +1,198 @@
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+<body>
+
+    <%- include('./partials/nav.ejs') %>
+
+    <%- include('./partials/modals.ejs') %>
+
+    <%- include('./partials/cookies.ejs') %>
+
+    <div class="custom-title-wrapper">
+        <div class="custom-title-container">
+          <h1 class="custom-title">Create Your Custom Cakes</h1>
+        </div>
+    </div>
+
+    <div class="custom-cake-background">
+        <div class="animated-texts">
+          <h1 class="fade-text">Every special occasion deserves a cake that tells a unique story.</h1>
+          <h1 class="fade-text">Let’s work together to make something extraordinary.</h1>
+          <h1 class="fade-text">
+            Let your imagination lead the way.<br>Fill the form to place your custom order!!
+            <div class="down-arrows">
+              <span class="arrow">↓</span>
+              <span class="arrow">↓</span>
+              <span class="arrow">↓</span>
+              <span class="arrow">↓</span>
+            </div>
+          </h1>
+        </div>
+    </div>
+
+    <section class="custom-cake-form">
+      <h2 class="form-title">Tell Us About Your Dream Cake.</h2>
+    
+      <form id="cake-form" class="cake-form" action="/customOrders" method="POST">
+        <!-- First Dropdown Field -->
+        <div class="form-group">
+          <label for="occasions" class="form-label">Select the occasion</label>
+          <select id="occasion" name="occasion" class="form-input">
+            <option value="birthday">Birthday</option>
+            <option value="wedding">Wedding</option>
+            <option value="anniversary">Anniversary</option>
+            <option value="graduation">Graduation</option>
+            <option value="baby-shower">Baby Shower</option>
+            <option value="custom">Others</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="cake-size" class="form-label">Select the cake size</label>
+          <select id="size" name="size" class="form-input">
+            <option value="Small">Small (6-inch)</option>
+            <option value="Medium">Medium (8-inch)</option>
+            <option value="Large">Large (10-inch)</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="number-of-tiers" class="form-label">Select the number of tiers</label>
+          <select id="tiers" name="tiers" class="form-input">
+            <option value="1">1 Tier</option>
+            <option value="2">2 Tier</option>
+            <option value="3">3 Tier</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="cake-shape" class="form-label">Shape of Cake</label>
+          <select id="shape" name="shape" class="form-input">
+            <option value="round">Round</option>
+            <option value="square">Square</option>
+            <option value="rectangle">Rectangle</option>
+            <option value="heart">Heart</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="flavors" class="form-label">Select desired flavor</label>
+          <select id="flavor" name="flavor" class="form-input">
+            <option value="vanilla">Vanilla</option>
+            <option value="chocolate">Chocolate</option>
+            <option value="velvet">Red velvet</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="fillings-on-cake" class="form-label">Select fillings</label>
+          <select id="fillings" name="fillings" class="form-input">
+            <option value="none">None</option>
+            <option value="chocolate">Chocolate</option>
+            <option value="fruit">Fruit (strawberry, raspberry etc.)</option>
+            <option value="cream-cheese">Cream cheese</option>
+            <option value="ganache">Chocolate ganache</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="icing-on-cake" class="form-label">Icin/Frosting</label>
+          <select id="icing" name="icing" class="form-input">
+            <option value="buttercream">Buttercream</option>
+            <option value="fondant">Fondant</option>
+            <option value="whipped cream">Whipped cream</option>
+            <option value="ganache">Ganache</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="decorations-for-cake" class="form-label">Decorations</label>
+          <select id="decorations" name="decorations" class="form-input" onchange="toggleCustomInput('decorations', 'themes-input')">
+            <option value="simple">Simple (no decorations)</option>
+            <option value="sprinkles">Sprinkles</option>
+            <option value="flowers">Flowers</option>
+            <option value="yes">Themes</option>
+          </select>
+          <!-- Hidden custom input field -->
+          <input 
+            type="text" 
+            id="themes-input"
+            name="decorationDetails" 
+            class="additional-input" 
+            placeholder="E.g, cartoon character: Spongebob" 
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="candles-on-cake" class="form-label">Candle types</label>
+          <select id="candles" name="candles" class="form-input">
+            <option value="standard">Standard candles</option>
+            <option value="fireworks">Firework candles</option>
+          </select>
+        </div>
+
+        <div class="form-group">
+          <label for="age-sign" class="form-label">Age sign</label>
+          <select id="ageSign" name="ageSign" class="form-input" onchange="toggleCustomInput('ageSign', 'ageDetails')">
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+          </select>
+          <!-- Hidden custom input field -->
+          <input 
+            type="text" 
+            id="ageDetails" 
+            name="ageDetails"
+            class="additional-input" 
+            placeholder="Specify the age" 
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="text-on-cake" class="form-label">Text on cake</label>
+          <select id="textOnCake" name="textOnCake" class="form-input" onchange="toggleCustomInput('textOnCake', 'cakeTextDetails')">
+            <option value="no">No</option>
+            <option value="yes">Yes</option>
+          </select>
+          <!-- Hidden custom input field -->
+          <input 
+            type="text" 
+            id="cakeTextDetails" 
+            name="cakeTextDetails"
+            class="additional-input" 
+            placeholder="Specify the text" 
+          />
+        </div>
+
+        <div class="form-group">
+          <label for="delivery/pick up" class="form-label">Pick up or Delivery</label>
+          <select id="deliveryOrPickup" name="deliveryOrPickup" class="form-input">
+            <option value="pickup">Pick up</option>
+            <option value="delivery">Delivery</option>
+          </select>
+        </div>
+
+        <div class="form-group date-of-delivery">
+          <label for="delivery-date" class="form-label">Date of Delivery/Pick Up</label>
+          <input type="date" id="deliveryDate" name="deliveryDate" class="form-input" />
+      </div>
+      
+      <div class="form-group text-area-group">
+          <label for="anything-else" class="form-label">Anything Else We Should Know?</label>
+          <textarea 
+              id="additionalDetails" 
+              name="additionalDetails"
+              class="form-textarea" 
+              placeholder="Let us know any specific details..."></textarea>
+      </div>
+
+        <button type="submit" class="custom-submit-btn">Submit</button>
+
+      </form>
+    </section>
+    
+
+    <%- include('./partials/footer.ejs') %>
+    
+    <script src="/scripts/custom-order.js"></script>
+</body>
+</html>

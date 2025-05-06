@@ -1,0 +1,43 @@
+<html lang ="en">
+    <%- include('./partials/head.ejs') %>
+<body>
+
+    <%- include('./partials/nav.ejs') %>
+
+    <%- include('./partials/modals.ejs') %>
+
+    <%- include('./partials/cookies.ejs') %>
+
+    <div class="reward-header">
+        <h1>Customer of the Month</h1>
+        <img src="images/trophy.png" alt="Trophy Icon">
+    </div>
+
+    <div class="reward-background">
+        <img src="/images/confetti.gif" alt="Confetti Animation" class="confetti">
+        <div class="reward-texts">
+            <span class="text-line">BECOME</span>
+            <span class="text-line">OUR</span>
+            <span class="text-line text-right">Customer</span>
+        </div>
+    </div>
+
+    <div class="reward-section">
+        <p class="reward-intro">
+            We love celebrating our top customers! Each month, we reward one special customer for their loyalty and creativity. 
+            Could you be our next <span class="highlight">“Customer of the Month”</span>? <br>
+            Enjoy exclusive discounts, featured designs, and more when you’re selected!
+        </p>
+    
+        <h2 class="reward-title">What You Win</h2>
+        <p class="reward-details">
+            <span class="highlight">“Our Customer of the Month”</span> will enjoy a <b>20% discount</b> on their next order and receive a <b>featured spot</b> on our website!
+        </p>
+    
+        <h2 class="reward-title">Spotlight on Our Top Customers</h2>
+        <p class="no-winner">Be the first to win this title and enjoy amazing rewards!</p>
+    </div>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+</html>

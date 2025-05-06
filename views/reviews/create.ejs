@@ -1,0 +1,41 @@
+<html lang ="en">
+        <%- include('../partials/head.ejs') %>
+
+        <body>
+                <%- include('../partials/nav.ejs') %>
+
+                <%- include('../partials/modals.ejs') %>
+
+                <%- include('../partials/cookies.ejs') %>
+
+                <!-- Review Section -->
+                <div class="review-section">
+                        <form id="review-form" action="/reviews" method="POST">
+                                <h2 class="review-header">Create Review</h2>
+                                <div class="review-rating">
+
+                                        <!-- Star Rating -->
+                                        <div class="star-rating">
+                                                <input type="hidden" name="rating" id="rating-value">
+                                                <span class="star-input" data-value="1">&#9733;</span>
+                                                <span class="star-input" data-value="2">&#9733;</span>
+                                                <span class="star-input" data-value="3">&#9733;</span>
+                                                <span class="star-input" data-value="4">&#9733;</span>
+                                                <span class="star-input" data-value="5">&#9733;</span>
+                                        </div>
+
+                                        <!-- Input Fields -->
+                                        <input type="text" id="headline" name="headline" class="review-headline" placeholder="Add a headline: What's most important to know">
+                                        <textarea class="review-text" id="snippet" name="snippet" placeholder="Add a written review. What did you like or dislike?"></textarea> 
+                    
+                                        <!-- Submit Button -->
+                                        <button class="submit-button" name="submit" value="submit" >Submit</button> 
+                                </div>
+                        </form>   
+                </div>
+
+                <%- include('../partials/footer.ejs') %>
+
+                <script src="/scripts/review.js"></script>
+        </body>
+</html>

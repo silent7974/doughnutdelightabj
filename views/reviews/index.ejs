@@ -1,0 +1,172 @@
+<html lang="en">
+        <%- include('../partials/head.ejs') %>
+<body>
+        <%- include('../partials/nav.ejs') %>
+
+        <%- include('../partials/modals.ejs') %>
+
+        <%- include('../partials/cookies.ejs') %>
+
+                <!-- Slider main container -->
+                <div class="swiper">
+                        <!-- Additional required wrapper -->
+                        <div class="swiper-wrapper">
+                                
+                                <!-- Slide 1 -->
+                                <div class="swiper-slide">
+                                        <img src="images/slide1.jpg" alt="Slide 1">
+                                        <div class="text-one">Every bite is a moment of pure delight.</div>
+                                </div>
+
+                                <!-- Slide 2 -->
+                                <div class="swiper-slide">
+                                         <img src="images/slide2.jpg" alt="Slide 2">
+                                        <div class="text-two">
+                                            Experience the smooth, creamy perfection of our milk cakes.
+                                            A dessert that melts in your mouth and leaves you wanting more.
+                                        </div>
+                                </div>
+                                
+                                <!-- Slide 3 -->
+                                <div class="swiper-slide">
+                                        <img src="images/slide3.jpg" alt="Slide 3">
+                                        <div class="text-three">The Best in Abuja. Click Below to buy right now!!!</div>
+                                </div>
+                        </div>
+                        <!-- If we need pagination -->
+                        <div class="swiper-pagination"></div>
+      
+                        <!-- If we need navigation buttons -->
+                        <div class="swiper-button-prev"></div>
+                        <div class="swiper-button-next"></div>
+      
+                </div>
+
+                <!-- "Order Now" Button -->
+                <div class="button-container">
+                        <a href="/menu" class="order-now-btn">Order Now</a>
+                </div>
+                
+                <!-- Why Us? Section -->
+                <div class="why-us">
+                        <hr class="line left-line">
+                        <h2 class="why-us-title">Why Us?</h2>
+                        <hr class="line right-line">
+                </div> 
+                
+                <!-- Sub-headers for "Why Us?" -->
+                <div class="company-services">
+                        <div class="company-header left">
+                                <h3>Our Company</h3>
+                                <p>As, a small locally owned bakery,
+                                        we take pride in serving our 
+                                        community with love and dedication.
+                                        Every doughnut, cake and other 
+                                        product of ours is crafted with a
+                                        personal touch, making your 
+                                        experience special. By choosing us,
+                                         you’re supporting a small business
+                                        that values quality, customer 
+                                        relationships, and the heart of local
+                                        flavor.</p>
+                        </div>
+                        <div class="products-header center">
+                                <h3>Our Products</h3>
+                                <p>Our products range includes a variety
+                                        of cakes, doughnuts, cinnamon rolls,
+                                        meat pie, spring rolls, and samosas.
+                                        We combine traditional recipes like
+                                        masa, zobo drink and ginger drink with
+                                        modern flavors like chapati, and naan
+                                        bread ensuring, there’s something for
+                                        every taste. Whether you’re looking for
+                                        a sweet snack or a custom-designed
+                                        cake for a special event, our baked 
+                                        goods are crafted to delight and 
+                                        impress.</p>
+                        </div>
+                        <div class="services-header right">
+                                <h3>Our Services</h3>
+                                <p>We offer a range of services
+                                        to make every occasion 
+                                        memorable. From custom 
+                                        cake designs for weddings,
+                                        birthdays, and other events
+                                        to personalized orders for
+                                        treats, we cater to specific 
+                                        needs. Our delivery and 
+                                        setup services ensure your
+                                        baked goods arrive fresh 
+                                        and on time.</p>
+                        </div>
+                </div>
+                
+                <!-- Slideshow for Reward & Custom Order Navigation -->
+                <div class="swiper2">
+                        <div class="swiper-wrapper">
+                                <div class="swiper-slide">
+                                        <div class="first-frame">
+                                                <img src="images/no1customer.png" class="first-image">
+                                                <img src="images/dphoto.jpg" class="second-image">
+                                                <p class="earn-reward-text">
+                                                        AND EARN <br>
+                                                          FREE   <br>
+                                                         REWARD
+                                                </p>
+                                                <p class="reward-text">Click Below to view Rewards!!!</p>
+                                                <a href="/reward" class="reward-button">REWARDS</a>
+                                        </div>
+                                </div>
+                                <!-- Contents of the second frame -->
+                                <div class="swiper-slide">
+                                        <div class="second-frame">
+                                                <img src="images/decoration.jpg" class="decoration-image">
+                                                <div class="frame-text">Every special occasion deserves a cake that tells a unique story. <br> 
+                                                        Share your vision and we'll make it possible.
+                                                </div>
+                                                <div class="custom-text">
+                                                        Click below to place your custom orders.
+                                                </div>
+                                                <a href="/custom-order" class="custom-button">ORDER</a>   
+                                        </div>
+                                </div> 
+                        </div>
+                </div> 
+
+                <!-- Reviews highlight -->
+                <div class="reviews-highlight">
+                        <h2>What Our Customers Say</h2>
+                        <% if (reviews.length > 0) { %>
+                            <% reviews.forEach(review => { %>
+                                <a class="single" href="/reviews/<%= review._id %>">
+                                    <h4 class="headline"><%= review.headline %></h4>
+                                    <p class="snippet"><%= review.snippet %></p>
+                                    
+                                    <!-- Display Star Rating -->
+                                    <div class="star-display">
+                                        <% for (let i = 1; i <= 5; i++) { %>
+                                            <% if (i <= review.rating) { %>
+                                                <span class="star-display-filled">&#9733;</span> <!-- Filled star -->
+                                            <% } else { %>
+                                                <span class="star-display-empty">&#9734;</span> <!-- Empty star -->
+                                            <% } %>
+                                        <% } %>
+                                    </div>
+                                    
+                                    <!-- Display User Info -->
+                                    <p class="review-user">Reviewed by: <%= review.user ? review.user.name || review.user.email : "Anonymous" %></p>
+                                </a>
+                            <% }) %>
+                        <% } else { %>
+                            <p>No reviews yet. Be the first to leave one!</p>
+                        <% } %>
+                        <a href="/reviews" class="review-button">Create Review</a>              
+                </div>
+        
+        <%- include('../partials/footer.ejs') %>
+              
+
+        <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+        <script src="/scripts/slideshow.js"></script>      
+</body>
+</html>

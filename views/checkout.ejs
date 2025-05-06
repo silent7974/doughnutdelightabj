@@ -1,0 +1,63 @@
+<html lang="en">
+    <%- include('./partials/head.ejs') %>
+
+    <body>
+        <div class="checkout-container">
+            <h1 class="checkout-title">Checkout</h1>
+            
+            <!-- User Info Card -->
+            <div class="checkout-card user-info-card">
+                <h2>User Information</h2>
+                <p><strong>Full Name:</strong> <%= user.fullName %></p>
+                <p><strong>Email:</strong> <%= user.email %></p>
+                <p><strong>Phone:</strong> <%= user.phone %></p>
+            </div>
+    
+            <!-- Order Summary Card -->
+            <div class="checkout-card order-summary-card">
+                <h2>Order Summary</h2>
+                <ul>
+                    <% cartItems.forEach(item => { %>
+                        <li>
+                            <span><%= item.name %> (x<%= item.quantity %>)</span>
+                            <span>₦<%= item.price * item.quantity %></span>
+                        </li>
+                    <% }); %>
+                </ul>
+            </div>
+
+            <div id="map" style="height: 400px; width: 100%;"></div>
+
+            <!-- Hidden inputs for js rendering -->
+            <input type="hidden" id="user-email" value="<%= user.email %>">
+            <input type="hidden" id="total-price" value="<%= totalPrice %>">
+            <input type="hidden" id="location" name="location">
+
+            <div class="location-container">
+                <label for="address">Selected Address:</label>
+                <input type="text" id="address" name="address" placeholder="Select location or type manually">
+            
+                <label for="latitude">Latitude:</label>
+                <input type="text" id="latitude" name="latitude" readonly>
+            
+                <label for="longitude">Longitude:</label>
+                <input type="text" id="longitude" name="longitude" readonly>
+            </div>
+
+            <div class="checkout-summary">
+                <p>Cart Total: <span id="cart-total">₦<%= totalPrice %></span></p>
+                <p>Delivery Cost: <span id="delivery-cost">₦0</span></p>
+                <hr>
+                <p><strong>Total: <span id="overall-total">₦<%= totalPrice %></span></strong></p>
+            </div>
+            <button class="confirm-location" id="confirm-location">Calculate Delivery</button>
+            
+
+            <!-- Paystack Payment Button -->
+            <button id="paystackButton" class="checkout-button">Proceed to Payment</button>
+        </div>
+        
+        <script src="https://js.paystack.co/v1/inline.js"></script>
+        <script src="/scripts/checkout.js"></script>
+    </body>
+</html>

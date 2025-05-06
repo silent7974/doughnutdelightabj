@@ -1,0 +1,59 @@
+<html lang="en">
+<%- include("../partials/head.ejs") %>
+
+<body>
+  <%- include("../partials/nav.ejs") %>
+
+  <%- include('../partials/modals.ejs') %>
+
+  <%- include('../partials/cookies.ejs') %>
+
+  <div class="details-content">
+    <div class="details-headline">
+      <h2><%= review.headline %></h2>
+      <div class="star-display">
+        <% for (let i = 1; i <= 5; i++) { %>
+            <% if (i <= review.rating) { %>
+                <span class="star-display-filled">&#9733;</span> <!-- Filled star -->
+            <% } else { %>
+                <span class="star-display-empty">&#9734;</span> <!-- Empty star -->
+            <% } %>
+        <% } %>
+    </div>
+      <p class="review-user">By: <%= review.user.name %> (<%= review.user.email %>)</p>
+    </div>
+
+    <div class="details-snippet">
+      <p><%= review.snippet %></p>
+    </div>
+
+    <% if (user && user._id.equals(review.user._id)) { %>
+      <div>
+        <a class="delete" data-doc="<%= review._id %>">
+          <img src="/images/trashcan.png" alt="delete icon">
+        </a>
+      </div>
+    <% } %>
+  </div>
+
+  <%- include("../partials/footer.ejs") %>
+
+  <script>
+    const trashcan = document.querySelector('a.delete');
+
+    if (trashcan) {
+      trashcan.addEventListener('click', (e) => {
+        const endpoint = `/reviews/${trashcan.dataset.doc}`;
+
+        fetch(endpoint, {
+          method: 'DELETE',
+        })
+        .then(response => response.json())
+        .then(data => window.location.href = data.redirect)
+        .catch(err => console.log(err));
+      });
+    }
+    
+  </script>
+</body>
+</html>

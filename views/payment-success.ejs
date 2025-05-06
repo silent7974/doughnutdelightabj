@@ -1,0 +1,38 @@
+<main class="success-container">
+    <h1>Payment Successful 🎉</h1>
+    <p>Thank you for your order!</p>
+    <div class="delivery-message">
+        <p>Your delivery to <strong><%= address %></strong> will arrive in approximately 1 hour, Please contact us if there's any issue: 09065941258.</p>
+    </div>
+    <p>Transaction Reference: <strong><%= reference %></strong></p>
+    <a href="/" class="btn">Return Home</a>
+</main>
+
+<style>
+    .success-container {
+        text-align: center;
+        padding: 50px;
+    }
+
+    .delivery-message {
+    background-color: #f8f9fa; /* Light gray background */
+    border-left: 5px solid #28a745; /* Green accent */
+    padding: 15px;
+    margin: 20px 0;
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+    .btn {
+        display: inline-block;
+        padding: 10px 20px;
+        margin-top: 20px;
+        background: #28a745;
+        color: white;
+        text-decoration: none;
+        border-radius: 5px;
+    }
+</style>
