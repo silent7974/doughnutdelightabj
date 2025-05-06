@@ -385,9 +385,6 @@ form button:hover {
 
 
 
-
-
-
 /* Slideshow */
 .swiper{
     width: 100%;
@@ -1846,7 +1843,7 @@ a .back-arrow-icon:hover {
     padding: 20px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
-    max-width: 400px;
+    max-width: 300px;
     margin: 20px auto;
 }
 
@@ -3201,7 +3198,7 @@ a .back-arrow-icon:hover {
 
      .swiper-slide .reward-text{
         right: 11%;
-        font-size: 22px;
+        font-size: 19px;
      }
 
      .swiper-slide .reward-button{
@@ -3211,10 +3208,6 @@ a .back-arrow-icon:hover {
         bottom: 2%;
         right: 33%;
      }
-
-
-
-
 
      /* custom order frame */
      .swiper-slide .second-frame{
@@ -3234,14 +3227,14 @@ a .back-arrow-icon:hover {
      .swiper-slide .custom-text{
         top: 58%;
         right: 5%;
-        font-size: 20px;
+        font-size: 17px;
      }
 
      .swiper-slide .custom-button{
         width: 140px;
         height: 44px;
         font-size: 25px;
-        right: 120px;
+        right: 100px;
         top: 76%;
      }
 
@@ -3334,19 +3327,28 @@ a .back-arrow-icon:hover {
         margin-top: 80px;
     }
 
+    .cart-container{
+        right: 0.3%;
+    }
+
     .cart-icon{
-        height: 40px;
-        width: 40px;
+        height: 33px;
+        width: 33px;
+    }
+
+    .cart-icon-number{
+        width: 14px;
+        height: 14px;
     }
 
     .menu-text{
-        font-size: 35px;
+        font-size: 30px;
     }
 
     .doughnut{
-        width: 25px;
-        height: 24px;
-        margin-right: 3px;
+        width: 23px;
+        height: 22px;
+        margin-right: 0.5px;
     }
 
     .doughnuts-left{
@@ -3362,7 +3364,7 @@ a .back-arrow-icon:hover {
            
         }
         66% {
-            transform: translateX(30px) rotate(720deg); /* Second roll */
+            transform: translateX(19px) rotate(720deg); /* Second roll */
            
         }
         100% {
@@ -3372,21 +3374,21 @@ a .back-arrow-icon:hover {
 
    /* Menu Header */
    .menu-options{
-    gap: 20px;
+    gap: 15px;
    }
 
    .circle {
-    width: 70px;
-    height: 68px;
+    width: 63px;
+    height: 61px;
    }
 
    .option-title{
-    font-size: 28px;
+    font-size: 22px;
    }
 
    /* Doughnut's header */
    .doughnuts-title{
-    font-size: 70px;
+    font-size: 50px;
    }
 
    .doughnuts-header{
@@ -3407,7 +3409,7 @@ a .back-arrow-icon:hover {
 
 /* Cake's header */
 .cakes-title{
-    font-size: 70px;
+    font-size: 50px;
    }
 
    .cakes-header{
@@ -3428,7 +3430,7 @@ a .back-arrow-icon:hover {
 
 /* Beverage's header */
 .beverages-title{
-    font-size: 70px;
+    font-size: 50px;
    }
 
    .beverages-header{
@@ -3449,7 +3451,7 @@ a .back-arrow-icon:hover {
 
 /* Other's header */
 .others-title{
-    font-size: 70px;
+    font-size: 50px;
    }
 
    .others-header{
@@ -3470,6 +3472,14 @@ a .back-arrow-icon:hover {
 
 .menu-card{
     margin-left: 0px;
+    width: 350px;
+    height: 400px;
+    gap: 6px;
+}
+
+.menu-card-image{
+    width: 320px;
+    height: 200px;
 }
 
 
@@ -3489,7 +3499,7 @@ a .back-arrow-icon{
 }
 
 .empty-cart-container{
-    width: 400px;
+    width: 380px;
     height: 300px;
 }
 
@@ -3503,13 +3513,13 @@ a .back-arrow-icon{
 }
 
 .cart-item{
-    width: 380px;
+    width: 320px;
     height: 180px;
 }
 
 .cart-item-image{
     width: 280px;
-    height: 16px;
+    height: 166px;
     margin-right: 8px;
 }
 
@@ -3526,32 +3536,35 @@ a .back-arrow-icon{
 }
 
 .cart-item-counter{
-    width: 160px;
+    width: 140px;
     height: 44px;
 }
 
 .cart-counter-value{
-    font-size: 22px;
+    font-size: 20px;
 }
 
 .cart-counter-minus, .cart-counter-plus{
-    font-size: 38px;
+    font-size: 30px;
 }
 
 .subtotal-label, .subtotal-value{
-    font-size: 38px;
+    font-size: 30px;
 }
 
 .total-label, .total-value{
-    font-size:38px;
+    font-size:30px;
 }
 
+
+
+/* Custom Order */
 .custom-title-container{
     margin-top: 100px;
 }
 
 .custom-title{
-    font-size: 40px;
+    font-size: 30px;
 }
 
 .custom-cake-background{
@@ -3575,11 +3588,11 @@ a .back-arrow-icon{
 }
 
 .form-group{
-    width: 380px;
+    width: 360px;
 }
 
 .form-textarea{
-    width: 380px;
+    width: 360px;
 }
 
 
@@ -3610,12 +3623,32 @@ a .back-arrow-icon{
 }
 
 /* Privacy policy, terms of use & cookie preference */
+.privacy-header h1{
+    font-size: 13px;
+}
+
+.privacy-content{
+    margin-left: 37%;
+}
+
 .privacy-intro{
-    font-size: 20px;
+    font-size: 16px;
 }
 
 .privacy-text {
-    font-size: 18px;
+    font-size: 14px;
+}
+
+.privacy-description{
+    font-size: 16px;
+}
+
+.privacy-title{
+    font-size: 16px;
+}
+
+.privacy-section-title{
+    font-size: 16px;
 }
 
 }
