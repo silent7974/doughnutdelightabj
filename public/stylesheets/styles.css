@@ -3482,6 +3482,16 @@ a .back-arrow-icon:hover {
     height: 200px;
 }
 
+.add-to-cart{
+    font-size: 20px;
+    width: 258px;
+    height: 55px;
+}
+
+.counter{
+    width: 258px;
+    height: 55px;
+}
 
 
 /* Cart Page */
@@ -3513,7 +3523,7 @@ a .back-arrow-icon{
 }
 
 .cart-item{
-    width: 320px;
+    width: 380px;
     height: 180px;
 }
 
