@@ -1977,10 +1977,10 @@ a .back-arrow-icon:hover {
 
 .fade-text {
     font-family: 'Norican';
+    position: absolute;
     font-size: 120px;
     color: #fff;
     opacity: 0;
-    position: absolute;
     animation: fade-sequential 12s ease-in-out infinite; 
 }
 
@@ -3548,6 +3548,7 @@ a .back-arrow-icon{
 .cart-item-counter{
     width: 140px;
     height: 44px;
+    padding: 0 0px;
 }
 
 .cart-counter-value{
